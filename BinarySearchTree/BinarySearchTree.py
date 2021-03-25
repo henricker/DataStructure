@@ -50,5 +50,19 @@ class BinarySearchTree(BinaryTree):
     if value < node.data:
       return self._search(value, node.left)
     return self._search(value, node.right)
+ 
+# Encontrando o MAIOR e o MENOR elemento numa ÁRVORE Binária de Busca: https://youtu.be/Q9s_XyJpHTI
+ def min(self, node=ROOT):
+    if node == ROOT:
+        node = self.root
+    while node.left:
+        node = node.left
+    return node.data
 
+ def max(self, node=ROOT):
+    if node == ROOT:
+        node = self.root
+    while node.right:
+        node = node.right
+    return node.data
       
